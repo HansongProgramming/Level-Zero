@@ -1,0 +1,123 @@
+
+<style>
+  .broken-page { font-family: var(--font-sans); padding: 1rem; }
+  .browser-bar { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 8px 12px; display: flex; align-items: center; gap: 10px; margin-bottom: 0; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .url-bar { flex: 1; background: var(--color-background-primary); border: 0.5px solid var(--color-border-secondary); border-radius: 20px; padding: 4px 12px; font-size: 13px; color: var(--color-text-secondary); }
+  .page-area { border: 0.5px solid var(--color-border-tertiary); border-top: none; padding: 1.5rem; background: var(--color-background-primary); min-height: 420px; }
+  .nav { display: flex; gap: 1rem; padding: 0.5rem 0 1rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1.5rem; }
+  .nav a { color: var(--color-text-info); font-size: 14px; text-decoration: none; }
+  .hero { margin-bottom: 1.5rem; }
+  .btn { display: inline-block; padding: 10px 20px; border-radius: var(--border-radius-md); font-size: 14px; border: 0.5px solid var(--color-border-secondary); cursor: pointer; background: var(--color-background-secondary); color: var(--color-text-primary); }
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem; }
+  .broken-label { font-size: 11px; background: #FAEEDA; color: #633806; padding: 2px 8px; border-radius: 20px; font-weight: 500; display: inline-block; margin-bottom: 6px; }
+  .issue-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .issue-list li { font-size: 13px; color: var(--color-text-secondary); display: flex; align-items: flex-start; gap: 6px; }
+  .issue-list li::before { content: "→"; color: #D85A30; flex-shrink: 0; margin-top: 1px; }
+  .sidebar { float: right; width: 180px; margin-left: 1rem; margin-bottom: 1rem; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem; font-size: 13px; color: var(--color-text-secondary); }
+  .missing-img { width: 100%; height: 80px; background: var(--color-background-secondary); border: 0.5px dashed var(--color-border-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--color-text-tertiary); margin-bottom: 8px; }
+</style>
+
+<div class="broken-page">
+  <h2 class="sr-only">Broken HTML demo page for classroom use</h2>
+
+  <div style="margin-bottom: 1.5rem; padding: 0.75rem 1rem; background: #FCEBEB; border: 0.5px solid #F09595; border-radius: var(--border-radius-md); font-size: 13px; color: #791F1F;">
+    <strong>For students:</strong> This page has <strong>8 intentional bugs</strong> hidden inside. Find them all!
+  </div>
+
+  <div class="browser-bar">
+    <span class="dot" style="background:#E24B4A;"></span>
+    <span class="dot" style="background:#EF9F27;"></span>
+    <span class="dot" style="background:#639922;"></span>
+    <span class="url-bar">http://www.myportfolio.com/index</span>
+  </div>
+
+  <div class="page-area">
+
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</span>
+      <a href="#">Blog</a>
+    </div>
+
+    <div class="hero">
+      <span class="broken-label">bug #1</span>
+      <h1 style="font-size:22px; font-weight:500; margin: 0 0 8px;">Welcome to My <b>Portfolio<b></h1>
+      <p style="font-size:14px; color: var(--color-text-secondary); margin: 0 0 12px;">I am a web developer who loves building things for the internet.</p>
+      <button class="btn">View My Work</buttton>
+    </div>
+
+    <div style="overflow: hidden; margin-bottom: 1.5rem;">
+      <div class="sidebar">
+        <span class="broken-label">bug #2</span>
+        <p style="margin:0 0 6px; font-weight:500; font-size:13px; color:var(--color-text-primary);">Quick Links</p>
+        <ul style="padding-left: 1rem; margin: 0; font-size:13px; color:var(--color-text-secondary);">
+          <li>GitHub</li>
+          <li>LinkedIn</li>
+          <li>Resume</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="broken-label">bug #3</span>
+        <div class="missing-img"><i class="ti ti-photo" style="font-size:20px;" aria-hidden="true"></i> &nbsp;profile.jpg (404)</div>
+        <img src="profile.jpg" alt="">
+        <p style="font-size:13px; color:var(--color-text-secondary);">
+          I have been coding since 2018. I specialize in HTML, CSS and JavaScript. I love creating clean and readable code.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <span class="broken-label">bug #4 – #8</span>
+      <div class="card-grid">
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">Unclosed tag</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            The <code>&lt;b&gt;</code> tag in the heading is never closed, so bold leaks into surrounding text.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">Mismatched tag</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            The button opens as <code>&lt;button&gt;</code> but closes as <code>&lt;/buttton&gt;</code> — a typo in the closing tag.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">Wrong closing tag</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            The nav "Contact" link opens with <code>&lt;a&gt;</code> but closes with <code>&lt;/span&gt;</code>.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">Broken image</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            <code>profile.jpg</code> path doesn't exist — image fails to load and has an empty <code>alt</code>.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">Missing alt text</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            The <code>&lt;img&gt;</code> has <code>alt=""</code> — meaningless for screen readers.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-weight:500; font-size:14px; margin:0 0 4px; color:var(--color-text-primary);">No page title</p>
+          <p style="font-size:12px; color:var(--color-text-secondary); margin:0;">
+            There's no <code>&lt;title&gt;</code> tag — the browser tab would show nothing meaningful.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
